@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Theory | MongoDB Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <a href="#home" class="logo">GLOW <span>THEORY</span></a>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#journal">Journal</a>
+        <a href="#studio">Shell Studio</a>
+        <a href="#concepts">Concepts</a>
+        <a href="#result">Result</a>
+    </nav>
+
+    <button class="menu" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="eyebrow">BEAUTY JOURNAL · EXPERIMENT 09</p>
+
+        <h1>Data, with a<br><i>little glow.</i></h1>
+
+        <p>
+            Discover the art of database management with MongoDB.
+            Create collections, insert documents, retrieve records
+            and explore powerful queries.
+        </p>
+
+        <a href="#studio" class="btn">Explore the Lab ↗</a>
+    </div>
+
+    <div class="hero-art">
+        <div class="circle"></div>
+        <div class="glass-card">
+            <span>GLOW THEORY / LAB NOTES</span>
+            <div class="database">DB</div>
+            <h3>MongoDB Studio</h3>
+            <p>CREATE · QUERY · UPDATE</p>
+        </div>
+    </div>
+</section>
+
+<div class="ticker">
+    CREATE ✳ QUERY ✳ UPDATE ✳ DELETE ✳ CREATE ✳ QUERY ✳ UPDATE ✳ DELETE
+</div>
+
+<!-- JOURNAL -->
+<section class="section" id="journal">
+    <p class="eyebrow">01 / THE JOURNAL</p>
+
+    <div class="intro">
+        <h2>A database is a<br><i>living collection.</i></h2>
+
+        <div>
+            <p>
+                MongoDB is a NoSQL, document-oriented database
+                that stores information in flexible JSON-like
+                documents.
+            </p>
+
+            <p>
+                MongoDB stores records as BSON (Binary JSON).
+                A database contains collections, and a collection
+                contains documents.
+            </p>
+        </div>
+    </div>
+
+    <div class="concepts">
+        <div>
+            <span>01</span>
+            <h3>Database</h3>
+            <p>The main space that holds collections.</p>
+        </div>
+
+        <div>
+            <span>02</span>
+            <h3>Collection</h3>
+            <p>A group of related documents.</p>
+        </div>
+
+        <div>
+            <span>03</span>
+            <h3>Document</h3>
+            <p>An individual record stored as BSON.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MONGODB SHELL STUDIO -->
+<section class="studio section" id="studio">
+    <p class="eyebrow">02 / THE SHELL STUDIO</p>
+
+    <h2>Build your database.<br>
+        <i>One command at a time.</i>
+    </h2>
+
+    <p class="studio-description">
+        Explore all the MongoDB operations using the interactive
+        command panel. Select a step and copy its command.
+    </p>
+
+    <div class="studio-layout">
+
+        <div class="steps">
+            <button class="active" onclick="showStep(0)">01 Start MongoDB Shell</button>
+            <button onclick="showStep(1)">02 Create Database</button>
+            <button onclick="showStep(2)">03 Create Collection</button>
+            <button onclick="showStep(3)">04 Insert Documents</button>
+            <button onclick="showStep(4)">05 Retrieve Documents</button>
+            <button onclick="showStep(5)">06 Conditional Queries</button>
+            <button onclick="showStep(6)">07 Update Documents</button>
+            <button onclick="showStep(7)">08 Delete Documents</button>
+            <button onclick="showStep(8)">09 Sort and Limit</button>
+            <button onclick="showStep(9)">10 Count Documents</button>
+            <button onclick="showStep(10)">11 Database Information</button>
+        </div>
+
+        <div class="terminal">
+            <div class="terminal-header">
+                <span>● ● ●</span>
+                <span>MONGODB SHELL</span>
+                <span>● ONLINE</span>
+            </div>
+
+            <div class="terminal-content">
+                <p id="stepLabel">STEP 01 — CONNECTION</p>
+
+                <h3 id="stepTitle">Start MongoDB Shell</h3>
+
+                <p id="stepDescription">
+                    Open your terminal and connect to a running
+                    MongoDB server using the interactive shell.
+                </p>
+
+                <pre><code id="command">mongosh</code></pre>
+
+                <div class="terminal-footer">
+                    <span id="hint">Run this command in your system terminal.</span>
+                    <button onclick="copyCommand()">Copy Command ↗</button>
+                </div>
+
+                <p id="feedback"></p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- QUERY OPERATORS -->
+<section class="section" id="concepts">
+    <p class="eyebrow">03 / THE INGREDIENT NOTEBOOK</p>
+
+    <h2>Small operators.<br><i>Powerful queries.</i></h2>
+
+    <p class="intro-text">
+        MongoDB query operators help filter documents
+        according to specific conditions.
+    </p>
+
+    <div class="operator-grid">
+
+        <div class="operator">
+            <h2>$gt</h2>
+            <h3>Greater Than</h3>
+            <p>Finds values greater than a specified value.</p>
+            <code>{ mark: { $gt: 80 } }</code>
+        </div>
+
+        <div class="operator">
+            <h2>$lt</h2>
+            <h3>Less Than</h3>
+            <p>Finds values less than a specified value.</p>
+            <code>{ mark: { $lt: 80 } }</code>
+        </div>
+
+        <div class="operator">
+            <h2>$gte</h2>
+            <h3>Greater or Equal</h3>
+            <p>Finds values greater than or equal to a value.</p>
+            <code>{ age: { $gte: 20 } }</code>
+        </div>
+
+        <div class="operator">
+            <h2>$lte</h2>
+            <h3>Less or Equal</h3>
+            <p>Finds values less than or equal to a value.</p>
+            <code>{ age: { $lte: 21 } }</code>
+        </div>
+
+        <div class="operator">
+            <h2>$in</h2>
+            <h3>Match from List</h3>
+            <p>Matches values present in a specified array.</p>
+            <code>{ department: { $in: ["CSE", "IT"] } }</code>
+        </div>
+
+    </div>
+</section>
+
+<!-- CRUD -->
+<section class="crud-section section">
+    <div class="crud-heading">
+        <p class="eyebrow">04 / THE CORE ROUTINE</p>
+
+        <h2>Keep every record<br><i>in good shape.</i></h2>
+
+        <p>
+            CRUD represents the four fundamental operations
+            used to manage documents in MongoDB.
+        </p>
+    </div>
+
+    <div class="crud-list">
+
+        <div>
+            <span>C</span>
+            <div>
+                <h3>Create</h3>
+                <p>Add new documents using insertOne() or insertMany().</p>
+            </div>
+        </div>
+
+        <div>
+            <span>R</span>
+            <div>
+                <h3>Read</h3>
+                <p>Retrieve documents using find() or findOne().</p>
+            </div>
+        </div>
+
+        <div>
+            <span>U</span>
+            <div>
+                <h3>Update</h3>
+                <p>Modify documents using updateOne() or updateMany().</p>
+            </div>
+        </div>
+
+        <div>
+            <span>D</span>
+            <div>
+                <h3>Delete</h3>
+                <p>Remove documents using deleteOne() or deleteMany().</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- RESULT -->
+<section class="result section" id="result">
+    <p class="eyebrow">05 / EXPERIMENT OUTCOME</p>
+
+    <h2>And that's a<br><i>successful run.</i></h2>
+
+    <p>
+        The student successfully creates a MongoDB database
+        and collection, inserts and retrieves documents,
+        performs conditional queries, updates and deletes
+        records, sorts results, and counts documents using
+        MongoDB Shell commands.
+    </p>
+
+    <div class="complete">✓ EXPERIMENT 09 COMPLETE</div>
+</section>
+
+<footer>
+    <a href="#home" class="logo">GLOW <span>THEORY</span></a>
+    <p>A BEAUTY-INSPIRED DIGITAL JOURNAL FOR DATABASE LEARNING.</p>
+    <a href="#home">BACK TO TOP ↑</a>
+    <small>© 2026 GLOW THEORY | EXPERIMENT 09</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
